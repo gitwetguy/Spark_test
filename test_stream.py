@@ -13,7 +13,7 @@ def main():
     sc = SparkContext(appName="StreamingcountByWindow");
     ssc = StreamingContext(sc, 3)   #Streaming will execute in each 3 seconds
     lines = ssc.textFileStream('./log/')  #'log/ mean directory name
-    counts = lines.flatMap(lambda line: line.split(" ")) \
+    counts = lines.flatMap(lambda line: line.split(",")) \
         .map(lambda x: (x, 1)) \
         .reduceByKey(lambda a, b: a + b)
     counts.pprint()
