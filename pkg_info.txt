@@ -1,0 +1,11 @@
+Package                           Version
+--------------------------------- -------------------
+tb-nightly                        2.5.0a20210207
+tensorboard-plugin-wit            1.8.0
+termcolor                         1.1.0
+terminado                         0.9.2
+testpath                          0.4.4
+textdistance                      4.2.1
+tf-estimator-nightly              2.4.0.dev2020102301
+tf-nightly-gpu                    2.5.0.dev20201121
+

@@ -1,0 +1,15 @@
+model.add(Bidirectional(GRU(32, return_sequences=True,unroll=False),input_shape=(X_train.shape[1],X_train.shape[2])))
+    model.add(Bidirectional(GRU(32, return_sequences=True,unroll=False)))
+    model.add(Bidirectional(GRU(32, return_sequences=False,unroll=False)))
+
+    model.add(Dense(y_test.shape[1]))
+    #model.add(Activation('linear'))
+    optz_fun = Adam(learning_rate=0.001)
+
+    model.compile(loss='mae',optimizer=optz_fun)
+    #model.summary()
+    EPOCH = 80
+    BATCH = 30
+    history = model.fit(X_train, y_train, epochs=EPOCH, batch_size=BATCH,validation_data=(X_test,y_test),callbacks=[],shuffle=False,verbose=0)
+
+r2score : 93
